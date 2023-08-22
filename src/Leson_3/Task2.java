@@ -11,9 +11,9 @@ public class Task2 {    public static void main(String[] args) {
     int range = max - min + 1;
 
     int[] mas = new int[15];
-    for (int i = 0; i < 15; i++) {
-        int a = ran.nextInt(range) + min;
-        mas[i] = a;
+    for (int i = 0,randomNum; i < 15; i++) {
+        randomNum = ran.nextInt(range) + min;
+        mas[i] = randomNum;
         System.out.println(mas[i]);
     }
     System.out.println("Enter key:");
