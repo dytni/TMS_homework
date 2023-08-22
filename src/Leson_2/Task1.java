@@ -25,5 +25,4 @@ public class Task1 {
             case 12 -> System.out.println("December");
         }
     }
-
 }

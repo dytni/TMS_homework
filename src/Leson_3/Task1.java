@@ -10,36 +10,17 @@ public class Task1 {
         int max = 50;
         int min = 0;
         int range = max - min + 1;
-
+        System.out.println("Enter key:");
+        int key = in.nextInt();
         int[] mas = new int[15];
         for (int i = 0; i < 15; i++) {
             int a = ran.nextInt(range) + min;
             mas[i] = a;
             System.out.println(mas[i]);
-        }
-        System.out.println("Enter key:");
-        int key = in.nextInt();
-        boolean a = false;
-        int[] mas1 = new int[14];
-        for (int i = 0; i < 15; i++) {
             if (mas[i] == key) {
-                a = true;
-
-                if (i == 0) {
-                    System.arraycopy(mas, 1, mas1, 0, 14);
-                } else {
-                    System.arraycopy(mas, 0, mas1, 0, i);
-                    System.arraycopy(mas, i + 1, mas1, i, mas.length - i - 1);
-                }
+                System.out.println("Key was finded");
             }
 
-        }
-        if(a){
-            for (int b : mas1) {
-                System.out.println(b);
-            }}
-        else{
-            System.out.println("Element dont find");
         }
     }
 }
