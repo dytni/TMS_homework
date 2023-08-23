@@ -15,27 +15,27 @@ public class Task4 {
         int aver_arr_2 = 0;
         Random random = new Random();
         System.out.print(" Array 1: ");
-        for (int i = 0, randomNum; i < 5; i++) {
-            randomNum = random.nextInt(51);
-            arr_1[i] = randomNum;
-            randomNum = random.nextInt(51);
-            arr_2[i] = randomNum;
+        for (int i = 0; i < 5; i++) {
+
+            arr_1[i] = random.nextInt(51);
+
+            arr_2[i] = random.nextInt(51);
             System.out.print(arr_1[i] + " ");
         }
         System.out.println();
         System.out.print(" Array 2: ");
         for (int i = 0; i < 5; i++) {
             System.out.print(arr_2[i] + " ");
-            aver_arr_1=aver_arr_1 + arr_1[i]/5;
-            aver_arr_2=aver_arr_2 + arr_2[i]/5;
+            aver_arr_1 = aver_arr_1 + arr_1[i] / 5;
+            aver_arr_2 = aver_arr_2 + arr_2[i] / 5;
         }
         System.out.println();
-        if(aver_arr_1>aver_arr_2){
-            System.out.print("average array 1 > array2: "+aver_arr_1+" > "+aver_arr_2);
-        } else if (aver_arr_1<aver_arr_2) {
-            System.out.print("average array 1 < array2: "+aver_arr_1+" < "+aver_arr_2);
-        }else{
-            System.out.print("average array 1 = array2: "+aver_arr_1+" = "+aver_arr_2);
+        if (aver_arr_1 > aver_arr_2) {
+            System.out.print("average array 1 > array2: " + aver_arr_1 + " > " + aver_arr_2);
+        } else if (aver_arr_1 < aver_arr_2) {
+            System.out.print("average array 1 < array2: " + aver_arr_1 + " < " + aver_arr_2);
+        } else {
+            System.out.print("average array 1 = array2: " + aver_arr_1 + " = " + aver_arr_2);
         }
 
     }
