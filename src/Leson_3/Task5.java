@@ -13,7 +13,8 @@ import java.util.Scanner;
 public class Task5 {
      public static void main(String[] args) {
           int size_of_arr_1;
-          int size_of_arr_2;
+          int size_of_arr_2=0;
+          int[]arr_2;
           int []arr_1;
           Random random = new Random();
           Scanner input = new Scanner(System.in);
@@ -25,9 +26,28 @@ public class Task5 {
                }
                else break;
           }
+          System.out.println("Array 1: ");
           arr_1=new int[size_of_arr_1];
           for(int i = 0;i<size_of_arr_1;i++){
-               arr_1[i]=random.nextInt(50);
+               arr_1[i]=random.nextInt(51);
+               System.out.print(" "+arr_1[i]);
+               if(arr_1[i]%2==0){
+                    size_of_arr_2++;
+               }
           }
+          System.out.println();
+          if(size_of_arr_2!=0){
+               arr_2=new int[size_of_arr_2];
+               System.out.println("Array 2: ");
+               for(int i=0,j=0;i<size_of_arr_1;i++){
+                    if(arr_1[i]%2==0){
+                         arr_2[j]=arr_1[i];
+                         System.out.print(" "+ arr_2[j]);
+                         j++;
+
+                    }
+               }
+          }else System.out.println("The are no even elements");
+
      }
 }
