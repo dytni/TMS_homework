@@ -11,10 +11,6 @@ public class Task2 {
                 if ((j+i) % 2 == 0) {
                     arr[i][j] = "w";
                 } else arr[i][j] = "b";
-            }
-        }
-        for (int i = 0; i < 8; i++) {
-            for (int j = 0; j < 8; j++) {
                 System.out.print(" "+arr[i][j]);
             }
             System.out.println();
