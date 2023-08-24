@@ -36,7 +36,7 @@ public class Task5 {
                }
           }
           System.out.println();
-          if(size_of_arr_2!=0){
+          if(size_of_arr_2!=0){//сделано для экономии памяти и не выделения ссылок p.s. привычка от препода из универа
                arr_2=new int[size_of_arr_2];
                System.out.println("Array 2: ");
                for(int i=0,j=0;i<size_of_arr_1;i++){
