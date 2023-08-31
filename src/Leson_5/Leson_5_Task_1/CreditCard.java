@@ -1,4 +1,4 @@
-package Leson_5;
+package Leson_5.Leson_5_Task_1;
 
 public class CreditCard {
 
