@@ -16,14 +16,14 @@ public final class Worker_Contract_Document extends Document {
     }
     public Worker_Contract_Document(int number, Date end_of_document, Date date, String worker_name){
         super(number,date);
-        this.end_of_document=end_of_document;
         this.worker_name=worker_name;
+        this.end_of_document=end_of_document;
     }
 
     @Override
     public void print_info() {
         super.print_info();
-        System.out.println(worker_name);
-        System.out.println(end_of_document);
+        System.out.println("worker name: "+worker_name);
+        System.out.println("date of ending document: "+end_of_document);
     }
 }

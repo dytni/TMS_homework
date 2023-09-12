@@ -14,13 +14,13 @@ public final class Product_Document extends Document {
     }
     public Product_Document(Date date, int number, int amount_of_prod, String prod_type){
         super(number,date);
-        this.prod_type=prod_type;
         this.amount_of_prod=amount_of_prod;
+        this.prod_type=prod_type;
     }
     @Override
     public void print_info() {
         super.print_info();
-        System.out.println(prod_type);
-        System.out.println(amount_of_prod);
+        System.out.println("amount of product: " + amount_of_prod);
+        System.out.println("type of product: " + prod_type);
     }
 }

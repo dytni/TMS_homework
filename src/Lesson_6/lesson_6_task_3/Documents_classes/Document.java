@@ -16,8 +16,9 @@ public abstract class Document implements Print_info {
     }
 
     public void print_info() {
-        System.out.println(number);
-        System.out.println(date);
+        System.out.println("number of document: "+number);
+        System.out.println("date of signing the document: "+date);
+
     }
 
 }

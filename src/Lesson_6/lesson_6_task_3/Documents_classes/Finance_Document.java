@@ -19,7 +19,7 @@ public final class Finance_Document extends Document{
     @Override
     public void print_info() {
         super.print_info();
-        System.out.println(total_sum);
-        System.out.println(department_code);
+        System.out.println("department code: "+department_code);
+        System.out.println("total sum: "+total_sum);
     }
 }

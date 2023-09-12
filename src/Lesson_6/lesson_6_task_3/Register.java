@@ -12,6 +12,8 @@ public class Register {
     public void show_info(){
         for(int i=0;i<index;i++) {
             array[i].print_info();
+            System.out.println();
         }
+
     }
 }
