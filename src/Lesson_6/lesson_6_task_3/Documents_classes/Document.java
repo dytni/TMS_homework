@@ -6,11 +6,11 @@ import java.util.Date;
 public abstract class Document implements Print_info {
     int number;
     Date date;
-    Document(){
+    public Document(){
         number=0;
         date=new Date(100, Calendar.JANUARY,1);
     }
-    Document(int number, Date date){
+    public Document(int number, Date date){
         this.number=number;
         this.date=date;
     }

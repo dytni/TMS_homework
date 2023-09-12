@@ -5,12 +5,12 @@ import java.util.Date;
 public final class Finance_Document extends Document{
     float total_sum;
     int department_code;
-    Finance_Document(){
+    public Finance_Document(){
         super();
         total_sum=0;
         department_code=0;
     }
-    Finance_Document(int number, Date date, int department_code, float total_sum){
+    public Finance_Document(int number, Date date, int department_code, float total_sum){
         super(number, date);
         this.department_code=department_code;
         this.total_sum=total_sum;
