@@ -1,4 +1,4 @@
-package Leson_8;
+package Lesson_8;
 /*1. Создайте класс, который описывает вектор в двумерной системе координат.
 Создайте класс, который описывает вектор в трехмерной системе координат.
 У каждого класса должны быть:
@@ -26,6 +26,5 @@ public class task_1 {
          Vector_arr vector_arr = new Vector_arr(coordinates);
          System.out.println(vector_arr.vector_len());
          vector_arr.vector_show_info();
-
      }
 }
