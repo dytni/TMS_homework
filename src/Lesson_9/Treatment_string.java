@@ -1,5 +1,6 @@
 package Lesson_9;
 
+
 public class Treatment_string {
     static void show_2_blocks_with_numbers(String string) {
         if (string == null) throw new IllegalArgumentException("Error argument");
@@ -31,17 +32,34 @@ public class Treatment_string {
 
     static void is_string_contain_abc(String string) {
         if (string == null) throw new IllegalArgumentException("Error argument");
-        if(string.contains("abc")||string.contains("ABC"))System.out.println("Contain");
+        if (string.contains("abc") || string.contains("ABC")) System.out.println("Contain");
         else System.out.println("Does not contain");
     }
-    static void is_string_starts_from_555(String string){
+
+    static void is_string_starts_from_555(String string) {
         if (string == null) throw new IllegalArgumentException("Error argument");
-        if(string.startsWith("555"))System.out.println("Yes");
+        if (string.startsWith("555")) System.out.println("Yes");
         else System.out.println("No");
     }
-    static void is_string_ends_with_1a2b(String string){
+
+    static void is_string_ends_with_1a2b(String string) {
         if (string == null) throw new IllegalArgumentException("Error argument");
-        if(string.endsWith("1a2b"))System.out.println("Yes");
+        if (string.endsWith("1a2b")) System.out.println("Yes");
         else System.out.println("No");
+    }
+
+    static void search_max_min(String string) {
+        if (string == null) throw new IllegalArgumentException("Error argument");
+        String[] string1 = string.split(" ");
+        int max = string1[0].length();
+        int min = string1[0].length();
+        for (String element : string1) {
+            if (element.length() > max) max = element.length();
+            if (element.length() < min) min = element.length();
+        }
+        for (String element : string1) {
+            if (element.length() == max) System.out.println("Maximal length: " + element);
+            else if (element.length() == min) System.out.println("Minimal length: " + element);
+        }
     }
 }

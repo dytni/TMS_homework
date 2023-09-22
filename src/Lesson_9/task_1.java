@@ -48,5 +48,7 @@ public class task_1 {
         Treatment_string.is_string_starts_from_555(string_1);
         Treatment_string.is_string_ends_with_1a2b(string);
         Treatment_string.is_string_ends_with_1a2b(string_1);
+        String string_2 = "Привет меня зовут коля";
+        Treatment_string.search_max_min(string_2);
     }
 }
