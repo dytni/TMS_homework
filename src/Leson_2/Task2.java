@@ -35,5 +35,6 @@ public class Task2 {
         } else if (key == 12) {
             System.out.println("December");
         }
+        else System.out.println("Wrong input");
     }
 }

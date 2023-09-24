@@ -23,6 +23,7 @@ public class Task1 {
             case 10 -> System.out.println("October");
             case 11 -> System.out.println("November");
             case 12 -> System.out.println("December");
+            default -> System.out.println("Wrong input");
         }
     }
 
