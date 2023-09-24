@@ -12,34 +12,34 @@ import java.util.Scanner;
 */
 public class Task5 {
      public static void main(String[] args) {
-          int size_of_arr_1;
-          int size_of_arr_2=0;
+          int sizeofArr1;
+          int sizeofArr2 =0;
           int[]arr_2;
           int []arr_1;
           Random random = new Random();
           Scanner input = new Scanner(System.in);
           System.out.println("Enter size of array in range from 6 to 10");
           while(true) {
-               size_of_arr_1 = input.nextInt();
-               if (size_of_arr_1 < 6 || size_of_arr_1 >= 11) {
+               sizeofArr1 = input.nextInt();
+               if (sizeofArr1 < 6 || sizeofArr1 >= 11) {
                     System.out.println("Enter value again");
                }
                else break;
           }
           System.out.println("Array 1: ");
-          arr_1=new int[size_of_arr_1];
-          for(int i = 0;i<size_of_arr_1;i++){
+          arr_1=new int[sizeofArr1];
+          for(int i = 0; i< sizeofArr1; i++){
                arr_1[i]=random.nextInt(51);
                System.out.print(" "+arr_1[i]);
                if(arr_1[i]%2==0){
-                    size_of_arr_2++;
+                    sizeofArr2++;
                }
           }
           System.out.println();
-          if(size_of_arr_2!=0){//сделано для экономии памяти и не выделения ссылок p.s. привычка от препода из универа
-               arr_2=new int[size_of_arr_2];
+          if(sizeofArr2 !=0){//сделано для экономии памяти и не выделения ссылок p.s. привычка от препода из универа
+               arr_2=new int[sizeofArr2];
                System.out.println("Array 2: ");
-               for(int i=0,j=0;i<size_of_arr_1;i++){
+               for(int i = 0, j = 0; i< sizeofArr1; i++){
                     if(arr_1[i]%2==0){
                          arr_2[j]=arr_1[i];
                          System.out.print(" "+ arr_2[j]);
@@ -47,7 +47,7 @@ public class Task5 {
 
                     }
                }
-          }else System.out.println("The are no even elements");
-
+          }else
+               System.out.println("The are no even elements");
      }
 }
