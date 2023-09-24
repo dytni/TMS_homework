@@ -1,7 +1,6 @@
 package Leson_2;
 
 import java.util.Scanner;
-
     /*Написать программу для вывода названия поры года по
 номеру месяца. При решении используйте оператор switch-case*/
 public class Task1 {
