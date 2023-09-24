@@ -25,5 +25,4 @@ public class Task1 {
             default -> System.out.println("Wrong input");
         }
     }
-
 }
