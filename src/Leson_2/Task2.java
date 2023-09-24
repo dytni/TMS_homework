@@ -1,15 +1,13 @@
 package Leson_2;
 
 import java.util.Scanner;
-
-public class Task2 {
     /*Написать программу для вывода названия поры года по
     номеру месяца. При решении используйте оператор if-else-if.*/
+public class Task2 {
     public static void main(String[] args) {
-        int key;
         Scanner input = new Scanner(System.in);
         System.out.println("Enter number of month");
-        key = input.nextInt();
+        int key = input.nextInt();
         if (key == 1) {
             System.out.println("January");
         } else if (key == 2) {
