@@ -17,7 +17,6 @@ public class Task3 {
         size = input.nextInt();
         double[] mas = new double[size];
         for (int i = 0; i < size; i++) {
-
             mas[i] = Math.random();
             System.out.println(mas[i]);
         }
