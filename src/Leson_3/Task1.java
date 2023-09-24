@@ -16,6 +16,7 @@ public class Task1 {
             if (mas[i] == key) {
                 System.out.println("Key was finded");
                 break;
+
             }
         }
     }
