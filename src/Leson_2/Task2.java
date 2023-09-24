@@ -1,9 +1,8 @@
 package Leson_2;
 
 import java.util.Scanner;
-
-    /*Написать программу для вывода названия поры года по
-    номеру месяца. При решении используйте оператор if-else-if.*/
+/*Написать программу для вывода названия поры года по
+номеру месяца. При решении используйте оператор if-else-if.*/
 public class Task2 {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
