@@ -1,9 +1,10 @@
 package Leson_2;
 
 import java.util.Scanner;
+
+public class Task1 {
     /*Написать программу для вывода названия поры года по
 номеру месяца. При решении используйте оператор switch-case*/
-public class Task1 {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         System.out.println("Enter number of month");
@@ -24,5 +25,5 @@ public class Task1 {
             default -> System.out.println("Wrong input");
         }
     }
-
 }
+
