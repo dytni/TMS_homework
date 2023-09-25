@@ -98,10 +98,11 @@ public class Treatment_string {
     static void check_palindrome(int index, String string) {
         if (string == null) throw new IllegalArgumentException("Error argument");
         String[] strings = string.split(" ");
+        if (index > strings.length) throw new IllegalArgumentException("Error argument");
         StringBuilder stringBuilder1 = new StringBuilder(strings[index]);
         StringBuilder stringBuilder2 = new StringBuilder(strings[index]);
-        int commaIndex=stringBuilder1.lastIndexOf(",");
-        if(commaIndex!=-1){
+        int commaIndex = stringBuilder1.lastIndexOf(",");
+        if (commaIndex != -1) {
             stringBuilder1.deleteCharAt(commaIndex);
             stringBuilder2.deleteCharAt(commaIndex);
         }
@@ -111,7 +112,7 @@ public class Treatment_string {
         } else
             System.out.println("is not palindrome");
     }
-    static void char_duplication(String string){
+    static void char_duplication(String string) {
         if (string == null) throw new IllegalArgumentException("Error argument");
         String[] strings = string.split(" ");
         char[][] buffer = new char[strings.length][];
@@ -122,8 +123,8 @@ public class Treatment_string {
                 strings[i].getChars(0, strings[i].length(), buffer[i] = new char[strings[i].length()], 0);
             }
         }
-        for(char[]chars:buffer){
-            for(char aChar: chars){
+        for (char[] chars : buffer) {
+            for (char aChar : chars) {
                 System.out.print(aChar);
                 System.out.print(aChar);
             }
