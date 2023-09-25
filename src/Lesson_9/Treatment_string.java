@@ -51,15 +51,14 @@ public class Treatment_string {
     static void search_max_min(String string) {
         if (string == null) throw new IllegalArgumentException("Error argument");
         String[] string1 = string.split(" ");
-        int max = string1[0].length();
-        int min = string1[0].length();
+        String max = string1[0];
+        String min = string1[0];
         for (String element : string1) {
-            if (element.length() > max) max = element.length();
-            if (element.length() < min) min = element.length();
+            if (element.length() > max.length()) max = element;
+            if (element.length() < min.length()) min = element;
         }
-        for (String element : string1) {
-            if (element.length() == max) System.out.println("Maximal length: " + element);
-            else if (element.length() == min) System.out.println("Minimal length: " + element);
-        }
+        System.out.println("Maximal length: " + max);
+        System.out.println("Minimal length: " + min);
     }
 }
+
