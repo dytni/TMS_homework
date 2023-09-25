@@ -1,4 +1,5 @@
 package Lesson_9;
+
 /*1. Написать программу со следующим функционалом:
 На вход передать строку (будем считать, что это номер документа).
 Номер документа имеет формат xxxx-yyy-xxxx-yyy-xyxy, где x — это число, а y — это буква.
@@ -50,7 +51,9 @@ public class task_1 {
         Treatment_string.is_string_ends_with_1a2b(string1);
         String string2 = "Привет меня зовут коля, я учусь в бгуире мне восемнадцать лет и я устал делать эти таски, кстати я их делаю вместо лекции по ТВИМСУ";
         Treatment_string.search_max_min(string2);
-        String string3 = "fffff ab f 1234 jkjk";
+        String string3 = "affaff ab f 1234 jkjk";
         Treatment_string.search_simple_word(string3);
+        int index = 0;
+        Treatment_string.check_palindrome(index, string3);
     }
 }

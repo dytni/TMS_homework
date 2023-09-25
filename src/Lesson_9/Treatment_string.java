@@ -89,10 +89,27 @@ public class Treatment_string {
             }
         }
         assert minCharWord != null;
-        for (char symbol: minCharWord){
+        for (char symbol : minCharWord) {
             System.out.print(symbol);
         }
         System.out.println();
+    }
+
+    static void check_palindrome(int index, String string) {
+        if (string == null) throw new IllegalArgumentException("Error argument");
+        String[] strings = string.split(" ");
+        StringBuilder stringBuilder1 = new StringBuilder(strings[index]);
+        StringBuilder stringBuilder2 = new StringBuilder(strings[index]);
+        int commaIndex=stringBuilder1.lastIndexOf(",");
+        if(commaIndex!=-1){
+            stringBuilder1.deleteCharAt(commaIndex);
+            stringBuilder2.deleteCharAt(commaIndex);
+        }
+        stringBuilder1.reverse();
+        if (stringBuilder1.compareTo(stringBuilder2) == 0) {
+            System.out.println("is a palindrome");
+        } else
+            System.out.println("is not palindrome");
     }
 }
 
