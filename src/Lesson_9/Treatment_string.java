@@ -111,5 +111,24 @@ public class Treatment_string {
         } else
             System.out.println("is not palindrome");
     }
+    static void char_duplication(String string){
+        if (string == null) throw new IllegalArgumentException("Error argument");
+        String[] strings = string.split(" ");
+        char[][] buffer = new char[strings.length][];
+        for (int i = 0; i < strings.length; i++) {
+            if (strings[i].endsWith(",")) {
+                strings[i].getChars(0, strings[i].length() - 1, buffer[i] = new char[strings[i].length() - 1], 0);
+            } else {
+                strings[i].getChars(0, strings[i].length(), buffer[i] = new char[strings[i].length()], 0);
+            }
+        }
+        for(char[]chars:buffer){
+            for(char aChar: chars){
+                System.out.print(aChar);
+                System.out.print(aChar);
+            }
+            System.out.print("\t");
+        }
+    }
 }
 
