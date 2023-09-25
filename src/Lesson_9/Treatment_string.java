@@ -1,6 +1,9 @@
 package Lesson_9;
 
 
+import java.util.HashSet;
+import java.util.Set;
+
 public class Treatment_string {
     static void show_2_blocks_with_numbers(String string) {
         if (string == null) throw new IllegalArgumentException("Error argument");
@@ -59,6 +62,37 @@ public class Treatment_string {
         }
         System.out.println("Maximal length: " + max);
         System.out.println("Minimal length: " + min);
+    }
+
+    static void search_simple_word(String string) {
+        if (string == null) throw new IllegalArgumentException("Error argument");
+        String[] strings = string.split(" ");
+        char[][] buffer = new char[strings.length][];
+        for (int i = 0; i < strings.length; i++) {
+            if (strings[i].endsWith(",")) {
+                strings[i].getChars(0, strings[i].length() - 1, buffer[i] = new char[strings[i].length() - 1], 0);
+            } else {
+                strings[i].getChars(0, strings[i].length(), buffer[i] = new char[strings[i].length()], 0);
+            }
+        }
+        char[] minCharWord = null;
+        int minCharCount = Integer.MAX_VALUE;
+        for (char[] chars : buffer) {
+            Set<Character> charSet = new HashSet<>();
+            for (char c : chars) {
+                charSet.add(c);
+            }
+            int charCount = charSet.size();
+            if (charCount < minCharCount) {
+                minCharCount = charCount;
+                minCharWord = chars;
+            }
+        }
+        assert minCharWord != null;
+        for (char symbol: minCharWord){
+            System.out.print(symbol);
+        }
+        System.out.println();
     }
 }
 

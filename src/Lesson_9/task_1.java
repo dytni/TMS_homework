@@ -37,18 +37,20 @@ package Lesson_9;
 public class task_1 {
     public static void main(String[] args) {
         String string = "1145-AvF-8991-iyP-2K5w";
-        String string_1 = "5554-ABC-8991-iyP-1a2b";
+        String string1 = "5554-ABC-8991-iyP-1a2b";
         Treatment_string.show_2_blocks_with_numbers(string);
         Treatment_string.show_string_with_blur(string);
         Treatment_string.show_letters_toLower_case(string);
         Treatment_string.show_letters_toUpper_case(string);
         Treatment_string.is_string_contain_abc(string);
-        Treatment_string.is_string_contain_abc(string_1);
+        Treatment_string.is_string_contain_abc(string1);
         Treatment_string.is_string_starts_from_555(string);
-        Treatment_string.is_string_starts_from_555(string_1);
+        Treatment_string.is_string_starts_from_555(string1);
         Treatment_string.is_string_ends_with_1a2b(string);
-        Treatment_string.is_string_ends_with_1a2b(string_1);
-        String string_2 = "Привет меня зовут коля, я учусь в бгуире мне восемнадцать лет и я устал делать эти таски, кстати я их делаю вместо лекции по ТВИМСУ";
-        Treatment_string.search_max_min(string_2);
+        Treatment_string.is_string_ends_with_1a2b(string1);
+        String string2 = "Привет меня зовут коля, я учусь в бгуире мне восемнадцать лет и я устал делать эти таски, кстати я их делаю вместо лекции по ТВИМСУ";
+        Treatment_string.search_max_min(string2);
+        String string3 = "fffff ab f 1234 jkjk";
+        Treatment_string.search_simple_word(string3);
     }
 }
