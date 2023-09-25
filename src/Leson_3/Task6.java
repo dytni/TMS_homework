@@ -7,7 +7,7 @@ import java.util.Random;
 экран на отдельной строке.
 
 */
-public class Task_6 {
+public class Task6 {
      public static void main(String[] args) {
           Random random=new Random();
           int size=random.nextInt(12)+1;

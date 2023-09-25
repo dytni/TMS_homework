@@ -7,7 +7,7 @@ import java.util.Scanner;
 циклов "пройти" по всему массиву и увеличить каждый
 элемент на заданное число. Пусть число, на которое будет
 увеличиваться каждый элемент, задается из консоли*/
-public class Task_1 {
+public class Task1 {
      public static void main(String[] args) {
           int[][][] arr = new int[3][3][3];
           int num;
