@@ -4,6 +4,6 @@ public class Main {
      public static void main(String[] args) {
          TreatmentPlan treatmentPlan = new TreatmentPlan();
          Patient patient= new Patient("Ivan", "Corona", treatmentPlan);
-         patient.treatmentPlan.add_plan(1);
+         patient.treatmentPlan.addPlan(1);
      }
 }

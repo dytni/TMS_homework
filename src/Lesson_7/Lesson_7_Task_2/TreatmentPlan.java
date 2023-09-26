@@ -1,7 +1,7 @@
 package Lesson_7.Lesson_7_Task_2;
 
 public class TreatmentPlan {
-    void add_plan(int kod){
+    void addPlan(int kod){
         if(kod==1){
             Surgeon surgeon = new Surgeon();
             surgeon.heal();
