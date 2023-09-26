@@ -33,22 +33,22 @@ public class task_1 {
     public static void main(String[] args) {
         String string = "1145-AvF-8991-iyP-2K5w";
         String string1 = "5554-ABC-8991-iyP-1a2b";
-        Treatment_string.show_2_blocks_with_numbers(string);
-        Treatment_string.show_string_with_blur(string);
-        Treatment_string.show_letters_toLower_case(string);
-        Treatment_string.show_letters_toUpper_case(string);
-        Treatment_string.is_string_contain_abc(string);
-        Treatment_string.is_string_contain_abc(string1);
-        Treatment_string.is_string_starts_from_555(string);
-        Treatment_string.is_string_starts_from_555(string1);
-        Treatment_string.is_string_ends_with_1a2b(string);
-        Treatment_string.is_string_ends_with_1a2b(string1);
+        TreatmentString.showTwoBlocksWithNumbers(string);
+        TreatmentString.showStringWithBlur(string);
+        TreatmentString.showLettersToLowerCase(string);
+        TreatmentString.showLettersToUpperCase(string);
+        TreatmentString.isStringContainAbc(string);
+        TreatmentString.isStringContainAbc(string1);
+        TreatmentString.isStringStartsFrom555(string);
+        TreatmentString.isStringStartsFrom555(string1);
+        TreatmentString.isStringEndsWith1a2b(string);
+        TreatmentString.isStringEndsWith1a2b(string1);
         String string2 = "Привет меня зовут коля, я учусь в бгуире мне восемнадцать лет и я устал делать эти таски, кстати я их делаю вместо лекции по ТВИМСУ";
-        Treatment_string.search_max_min(string2);
+        TreatmentString.searchMaxMin(string2);
         String string3 = "affaff ab f 1234 jkjk";
-        Treatment_string.search_simple_word(string3);
+        TreatmentString.searchSimpleWord(string3);
         int index = 0;
-        Treatment_string.check_palindrome(index, string3);
-        Treatment_string.char_duplication(string2);
+        TreatmentString.checkPalindrome(index, string3);
+        TreatmentString.charDuplication(string2);
     }
 }

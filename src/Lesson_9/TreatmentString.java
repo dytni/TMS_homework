@@ -4,28 +4,28 @@ package Lesson_9;
 import java.util.HashSet;
 import java.util.Set;
 
-public class Treatment_string {
-    static void show_2_blocks_with_numbers(String string) {
+public class TreatmentString {
+    static void showTwoBlocksWithNumbers(String string) {
         if (string == null) throw new IllegalArgumentException("Error argument");
         String[] string1 = string.split("-");
         System.out.println(string1[0] + string1[2]);
     }
 
-    static void show_string_with_blur(String string) {
+    static void showStringWithBlur(String string) {
         if (string == null) throw new IllegalArgumentException("Error argument");
         StringBuffer stringBuffer = new StringBuffer(string);
         System.out.println(stringBuffer.replace(5, 8, "***").replace(14, 17, "***"));
 
     }
 
-    static void show_letters_toLower_case(String string) {
+    static void showLettersToLowerCase(String string) {
         if (string == null) throw new IllegalArgumentException("Error argument");
         String[] string1 = string.split("-");
         System.out.print(string1[1].toLowerCase() + "/" + string1[3].toLowerCase() + "/");
         System.out.println(string1[4].toLowerCase().charAt(1) + "/" + string1[4].toLowerCase().charAt(3));
     }
 
-    static void show_letters_toUpper_case(String string) {
+    static void showLettersToUpperCase(String string) {
         if (string == null) throw new IllegalArgumentException("Error argument");
         String[] string1 = string.split("-");
         System.out.print(string1[1].toUpperCase() + "/" + string1[3].toUpperCase() + "/");
@@ -33,25 +33,25 @@ public class Treatment_string {
         System.out.println(stringBuilder.charAt(1) + "/" + stringBuilder.charAt(3));
     }
 
-    static void is_string_contain_abc(String string) {
+    static void isStringContainAbc(String string) {
         if (string == null) throw new IllegalArgumentException("Error argument");
         if (string.contains("abc") || string.contains("ABC")) System.out.println("Contain");
         else System.out.println("Does not contain");
     }
 
-    static void is_string_starts_from_555(String string) {
+    static void isStringStartsFrom555(String string) {
         if (string == null) throw new IllegalArgumentException("Error argument");
         if (string.startsWith("555")) System.out.println("Yes");
         else System.out.println("No");
     }
 
-    static void is_string_ends_with_1a2b(String string) {
+    static void isStringEndsWith1a2b(String string) {
         if (string == null) throw new IllegalArgumentException("Error argument");
         if (string.endsWith("1a2b")) System.out.println("Yes");
         else System.out.println("No");
     }
 
-    static void search_max_min(String string) {
+    static void searchMaxMin(String string) {
         if (string == null) throw new IllegalArgumentException("Error argument");
         String[] string1 = string.split(" ");
         String max = string1[0];
@@ -64,7 +64,7 @@ public class Treatment_string {
         System.out.println("Minimal length: " + min);
     }
 
-    static void search_simple_word(String string) {
+    static void searchSimpleWord(String string) {
         if (string == null) throw new IllegalArgumentException("Error argument");
         String[] strings = string.split(" ");
         char[][] buffer = new char[strings.length][];
@@ -95,7 +95,7 @@ public class Treatment_string {
         System.out.println();
     }
 
-    static void check_palindrome(int index, String string) {
+    static void checkPalindrome(int index, String string) {
         if (string == null) throw new IllegalArgumentException("Error argument");
         String[] strings = string.split(" ");
         if (index > strings.length) throw new IllegalArgumentException("Error argument");
@@ -112,7 +112,7 @@ public class Treatment_string {
         } else
             System.out.println("is not palindrome");
     }
-    static void char_duplication(String string) {
+    static void charDuplication(String string) {
         if (string == null) throw new IllegalArgumentException("Error argument");
         String[] strings = string.split(" ");
         char[][] buffer = new char[strings.length][];
