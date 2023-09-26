@@ -1,4 +1,4 @@
-package Lesson_6.Leson_6_Task_2;
+package Lesson_6.Lesson_6_Task_2;
 
 public interface Print {
     void print();

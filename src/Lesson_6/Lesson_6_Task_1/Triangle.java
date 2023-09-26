@@ -1,26 +1,26 @@
 package Lesson_6.Lesson_6_Task_1;
 
 public class Triangle extends Figure {
-    double a_side;
-    double b_side;
-    double c_side;
+    double aSide;
+    double bSide;
+    double cSide;
 
-    Triangle(double a_side, double b_side, double c_side) {
-        this.a_side = a_side;
-        this.b_side = b_side;
-        this.c_side = c_side;
+    Triangle(double aSide, double bSide, double cSide) {
+        this.aSide = aSide;
+        this.bSide = bSide;
+        this.cSide = cSide;
         this.setPerimeter();
         this.setArea();
     }
 
     double setPerimeter() {
-        perimeter = a_side + b_side + c_side;
+        perimeter = aSide + bSide + cSide;
         return perimeter;
     }
 
     double setArea() {
-        area = Math.sqrt((perimeter / 2) * (perimeter / 2 - a_side)
-                * (perimeter / 2 - b_side) * (perimeter / 2 - c_side));
+        area = Math.sqrt((perimeter / 2) * (perimeter / 2 - aSide)
+                * (perimeter / 2 - bSide) * (perimeter / 2 - cSide));
         return area;
     }
 }
