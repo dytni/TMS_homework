@@ -1,6 +1,6 @@
 package Lesson_7.Lesson_7_Task_2;
 
-public class Treatment_plan {
+public class TreatmentPlan {
     void add_plan(int kod){
         if(kod==1){
             Surgeon surgeon = new Surgeon();
