@@ -2,7 +2,6 @@ package Lesson_11;
 
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.util.Arrays;
 
 //1. Допустим есть txt файл с номерами документов. Номером документа является строка, состоящая из букв и цифр(без служебных символов).
 //        Пусть этот файл содержит каждый номер документа с новой строки и в строке никакой другой информации, только номер документа.
@@ -16,8 +15,6 @@ public class Task1 {
         try {
             docFile = new FileInputStream(path);
             int index;
-            char[] docNum = new char[]{'d', 'o', 'c', 'n', 'u', 'm'};
-            char[] contract = new char[]{'c', 'o', 'n', 't', 'r', 'a', 'c', 't'};
             int counter = 1;
             StringBuilder stringBuilder = new StringBuilder();
             while ((index = docFile.read()) != -1) {
@@ -32,15 +29,11 @@ public class Task1 {
                 if (line.matches("[a-zA-Z0-9]+")) {
                     char[] buffer = new char[6];
                     stringBuilder.getChars(0, 6, buffer, 0);
-                    if (!(Arrays.equals(docNum, buffer))) {
-                        buffer = new char[8];
-                        stringBuilder.getChars(0, 8, buffer, 0);
-                        if (!(Arrays.equals(contract, buffer))) {
-                            System.out.println("\u001b[31m" + "Uncorrected document number" + "\u001b[0m");
-                            counter -= 1;
-                            stringBuilder.delete(0, stringBuilder.indexOf("\n") + 1);
-                            continue;
-                        }
+                    if (!line.startsWith("docnum") && !line.startsWith("contract")) {
+                        System.out.println("\u001b[31m" + "Uncorrected document number" + "\u001b[0m");
+                        counter -= 1;
+                        stringBuilder.delete(0, stringBuilder.indexOf("\n") + 1);
+                        continue;
                     }
                     line = stringBuilder.substring(0, 15);
                     stringBuilder.delete(0, 15);
@@ -52,7 +45,6 @@ public class Task1 {
                     }
                     stringBuilder.delete(0, 2);
                     System.out.println(line);
-
                     counter -= 1;
                 } else {
                     System.out.println("\u001b[31m" + "Uncorrected document number" + "\u001b[0m");
