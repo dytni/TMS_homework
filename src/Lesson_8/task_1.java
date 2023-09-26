@@ -20,11 +20,11 @@ package Lesson_8;
 public class task_1 {
      public static void main(String[] args) {
 
-         Vector_2 vector_2= new Vector_2(1,1);
-         System.out.println(vector_2.vector_len());
+         Vector_2 vector2 = new Vector_2(1,1);
+         System.out.println(vector2.vector_len());
          int [] coordinates = new int[]{ 4, 5 ,2};
-         Vector_arr vector_arr = new Vector_arr(coordinates);
-         System.out.println(vector_arr.vector_len());
-         vector_arr.vector_show_info();
+         Vector_arr vectorArr = new Vector_arr(coordinates);
+         System.out.println(vectorArr.vector_len());
+         vectorArr.vector_show_info();
      }
 }
