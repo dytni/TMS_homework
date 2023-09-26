@@ -10,26 +10,26 @@ package Lesson_5.Lesson_5_Task_1;
 */
 public class Lesson_5_Task_1 {
      public static void main(String[] args) {
-          CreditCard card_1 = new CreditCard();
-          CreditCard card_2 = new CreditCard();
-          CreditCard card_3 = new CreditCard();
-          card_1.number_of_card = 88888880;
-          card_2.number_of_card = 88888881;
-          card_3.number_of_card = 88888882;
-          card_1.balance = 10000;
-          card_2.balance = 10000;
-          card_3.balance = 10000;
-          card_1.show_info();
-          card_2.show_info();
-          card_3.show_info();
+          CreditCard card1 = new CreditCard();
+          CreditCard card2 = new CreditCard();
+          CreditCard card3 = new CreditCard();
+          card1.numberOfCard = 88888880;
+          card2.numberOfCard = 88888881;
+          card3.numberOfCard = 88888882;
+          card1.balance = 10000;
+          card2.balance = 10000;
+          card3.balance = 10000;
+          card1.show_info();
+          card2.show_info();
+          card3.show_info();
           System.out.println();
           System.out.println();
-          card_1.add_cash(500000);
-          card_2.add_cash(1000000);
-          card_3.take_cash(100);
-          card_1.show_info();
-          card_2.show_info();
-          card_3.show_info();
+          card1.add_cash(500000);
+          card2.add_cash(1000000);
+          card3.take_cash(100);
+          card1.show_info();
+          card2.show_info();
+          card3.show_info();
 
      }
 }

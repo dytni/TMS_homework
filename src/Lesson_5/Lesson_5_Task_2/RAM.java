@@ -11,9 +11,9 @@ public class RAM {
             storage = 4;
         }
 
-        RAM(String ram_name, int ram_storage) {
-            name = ram_name;
-            storage = ram_storage;
+        RAM(String ramNname, int ramStorage) {
+            name = ramNname;
+            storage = ramStorage;
         }
 
         void print_info() {

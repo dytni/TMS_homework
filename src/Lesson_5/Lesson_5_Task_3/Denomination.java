@@ -1,9 +1,9 @@
 package Lesson_5.Lesson_5_Task_3;
 
 public enum Denomination {
-    dollar_20(0),
-    dollar_50(0),
-    dollar_100(0);
+    dollar20(0),
+    dollar50(0),
+    dollar100(0);
     private int count;
 
     Denomination(int count) {

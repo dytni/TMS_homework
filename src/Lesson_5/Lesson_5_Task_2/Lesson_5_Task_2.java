@@ -15,15 +15,15 @@ package Lesson_5.Lesson_5_Task_2;
 public class Lesson_5_Task_2 {
      public static void main(String[] args) {
 
-         HDD hdd_pc_2= new HDD("Samsung",2, Type_HDD.internal);
-         RAM ram_pc_2 = new RAM("lg",12);
-         Computer pc_1 = new Computer(500, "lenovo");
-         Computer pc_2 = new Computer(700,"HP",hdd_pc_2,ram_pc_2);
+         HDD hddPc2 = new HDD("Samsung",2, Type_HDD.internal);
+         RAM ramPc2 = new RAM("lg",12);
+         Computer pc1 = new Computer(500, "lenovo");
+         Computer pc2 = new Computer(700,"HP", hddPc2, ramPc2);
          System.out.println("       PC 1:");
-         pc_1.print_info();
+         pc1.print_info();
          System.out.println();
          System.out.println();
          System.out.println("       PC 2:");
-         pc_2.print_info();
+         pc2.print_info();
      }
 }

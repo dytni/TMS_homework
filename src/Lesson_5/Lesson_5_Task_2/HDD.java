@@ -13,9 +13,9 @@ public class HDD {
             storage = 1;
             typeHdd = Type_HDD.internal;
         }
-        HDD(String name_hdd, int storage_hdd, Type_HDD type){
-            name=name_hdd;
-            storage=storage_hdd;
+        HDD(String nameHdd, int storageHdd, Type_HDD type){
+            name= nameHdd;
+            storage= storageHdd;
             typeHdd=type;
         }
 }
