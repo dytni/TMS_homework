@@ -3,7 +3,7 @@ package Lesson_6.Lesson_6_task_3.Documents_classes;
 import java.util.Calendar;
 import java.util.Date;
 
-public abstract class Document implements Print_info {
+public abstract class Document implements PrintInfo {
     int number;
     Date date;
 
@@ -17,7 +17,7 @@ public abstract class Document implements Print_info {
         this.date = date;
     }
 
-    public void print_info() {
+    public void printInfo() {
         System.out.println("number of document: " + number);
         System.out.println("date of signing the document: " + date);
 

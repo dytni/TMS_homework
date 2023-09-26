@@ -6,14 +6,14 @@ public class Register {
     Document[] array = new Document[10];
     static int index = 0;
 
-    void add_doc(Document document) {
+    void addDoc(Document document) {
         array[index] = document;
         index += 1;
     }
 
-    public void show_info() {
+    public void showInfo() {
         for (int i = 0; i < index; i++) {
-            array[i].print_info();
+            array[i].printInfo();
             System.out.println();
         }
 

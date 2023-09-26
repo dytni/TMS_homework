@@ -1,6 +1,6 @@
 package Lesson_6.Lesson_6_Task_1;
 
-public class Lesson_6_task_1 {
+public class Task1 {
     public static void main(String[] args) {
         Figure[] figures = new Figure[5];
         double sum=0;
