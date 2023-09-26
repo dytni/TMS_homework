@@ -15,7 +15,7 @@ package Lesson_10;
 //        консоль).
 
 public class Task1 extends Exception {
-    static void is_string_contain_abc(String string) {
+    static void isStringContainAbc(String string) {
         try {
             if (string == null) throw new IllegalArgumentException("Error argument");
             if (string.contains("abc") || string.contains("ABC")) System.out.println("\u001b[32m"+"Contain"+"\u001b[0m");
@@ -24,7 +24,7 @@ public class Task1 extends Exception {
             System.out.println("\u001b[31m"+exception.getMessage()+"\u001b[0m");
         }
     }
-    static void is_string_starts_from_555(String string) {
+    static void isStringStartsFrom555(String string) {
         try {
             if (string == null) throw new IllegalArgumentException("Error argument");
             if (string.startsWith("555")) System.out.println("\u001b[32m"+"Yes"+"\u001b[0m");
@@ -33,7 +33,7 @@ public class Task1 extends Exception {
             System.out.println("\u001b[31m"+exception.getMessage()+"\u001b[0m");
         }
     }
-    static void is_string_ends_with_1a2b(String string) {
+    static void isStringEndsWith1a2b(String string) {
         try {
             if (string == null) throw new IllegalArgumentException("Error argument");
             if (string.endsWith("1a2b")) System.out.println("\u001b[32m"+"Yes"+"\u001b[0m");

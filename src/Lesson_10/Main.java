@@ -7,9 +7,9 @@ public class Main {
         String login = "dytni";
         String confirmPassword = "1234";
         String confirmPassword1 = "12341";
-        Task1.is_string_contain_abc(string);
-        Task1.is_string_ends_with_1a2b(string);
-        Task1.is_string_starts_from_555(string);
+        Task1.isStringContainAbc(string);
+        Task1.isStringEndsWith1a2b(string);
+        Task1.isStringStartsFrom555(string);
         System.out.println();
         System.out.println(Task2.password(login,password, confirmPassword));
         System.out.println();
