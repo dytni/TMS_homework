@@ -10,7 +10,11 @@ public class Main {
         Task1.is_string_contain_abc(string);
         Task1.is_string_ends_with_1a2b(string);
         Task1.is_string_starts_from_555(string);
-        Task2.password(login,password, confirmPassword);
-        Task2.password(login,password,confirmPassword1);
+        System.out.println();
+        System.out.println(Task2.password(login,password, confirmPassword));
+        System.out.println();
+        System.out.println(Task2.password(login,password,confirmPassword1));
+        System.out.println();
+
     }
 }
