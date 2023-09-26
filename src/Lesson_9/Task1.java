@@ -29,7 +29,7 @@ package Lesson_9;
 5. Дана произвольная строка.
 Вывести на консоль новую строку, которой задублирована каждая буква из начальной строки. Например, "Hello" -> "HHeelllloo".
 */
-public class task_1 {
+public class Task1 {
     public static void main(String[] args) {
         String string = "1145-AvF-8991-iyP-2K5w";
         String string1 = "5554-ABC-8991-iyP-1a2b";
