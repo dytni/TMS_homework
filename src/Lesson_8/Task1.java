@@ -17,14 +17,14 @@ package Lesson_8;
 2. Предыдущее задание обобщить и написать один класс Vector для произвольной размерности.
 Для этого в классе вектор для хранения координат следует использовать массив.
 */
-public class task_1 {
+public class Task1 {
      public static void main(String[] args) {
 
-         Vector_2 vector2 = new Vector_2(1,1);
-         System.out.println(vector2.vector_len());
+         Vector2 vector2 = new Vector2(1,1);
+         System.out.println(vector2.vectorLen());
          int [] coordinates = new int[]{ 4, 5 ,2};
-         Vector_arr vectorArr = new Vector_arr(coordinates);
-         System.out.println(vectorArr.vector_len());
-         vectorArr.vector_show_info();
+         VectorArr vectorArr = new VectorArr(coordinates);
+         System.out.println(vectorArr.vectorLen());
+         vectorArr.vectorShowInfo();
      }
 }
