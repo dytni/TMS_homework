@@ -4,27 +4,27 @@ import java.util.Scanner;
 
 public class ATM {
 
-    Money atm_money = new Money();
+    Money atmMoney = new Money();
 
     ATM(int count20, int count50, int count100) {
-        atm_money.setCount(count20, Denomination.dollar20);
-        atm_money.setCount(count50, Denomination.dollar50);
-        atm_money.setCount(count100, Denomination.dollar100);
+        atmMoney.setCount(count20, Denomination.dollar20);
+        atmMoney.setCount(count50, Denomination.dollar50);
+        atmMoney.setCount(count100, Denomination.dollar100);
     }
-    void add_money(){
+    void addMoney(){
         System.out.println("Enter count of banknotes with denomination 20 ");
         Scanner scanner = new Scanner(System.in);
         int count = scanner.nextInt();
-        atm_money.addCount(count, Denomination.dollar20);
+        atmMoney.addCount(count, Denomination.dollar20);
         System.out.println("Enter count of banknotes with denomination 50 ");
         count = scanner.nextInt();
-        atm_money.addCount(count, Denomination.dollar50);
+        atmMoney.addCount(count, Denomination.dollar50);
         System.out.println("Enter count of banknotes with denomination 100 ");
         count = scanner.nextInt();
-        atm_money.addCount(count, Denomination.dollar100);
+        atmMoney.addCount(count, Denomination.dollar100);
     }
 
-    boolean take_money(int sum) {
+    boolean takeMoney(int sum) {
         Money money = new Money();
         int count100 = 0;
         int count50 = 0;

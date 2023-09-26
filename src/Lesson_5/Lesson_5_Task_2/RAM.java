@@ -11,12 +11,12 @@ public class RAM {
             storage = 4;
         }
 
-        RAM(String ramNname, int ramStorage) {
-            name = ramNname;
+        RAM(String ramName, int ramStorage) {
+            name = ramName;
             storage = ramStorage;
         }
 
-        void print_info() {
+        void printInfo() {
             System.out.println("name: " + name + " storage = " + storage + " gb");
         }
 }

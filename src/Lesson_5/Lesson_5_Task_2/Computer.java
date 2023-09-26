@@ -18,13 +18,13 @@ public class Computer {
         yourRam = ramPc;
     }
 
-    void print_info() {
+    void printInfo() {
         System.out.println("model PC " + model + " coast = " + coast);
         System.out.println();
         System.out.println(" RAM info:");
-        yourRam.print_info();
+        yourRam.printInfo();
         System.out.println();
         System.out.println(" HDD info:");
-        yourHdd.print_info();
+        yourHdd.printInfo();
     }
 }

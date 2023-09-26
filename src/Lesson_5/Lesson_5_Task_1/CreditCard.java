@@ -5,15 +5,15 @@ public class CreditCard {
     int numberOfCard;
     int balance;
 
-    void add_cash(int sum) {
+    void addCash(int sum) {
         balance = balance + sum;
     }
 
-    void take_cash(int sum) {
+    void takeCash(int sum) {
         balance = balance - sum;
     }
 
-    void show_info() {
+    void showInfo() {
         System.out.println("Card number " + numberOfCard + " Balance = " + balance);
     }
 
