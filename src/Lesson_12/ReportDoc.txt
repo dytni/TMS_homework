@@ -1,11 +1,4 @@
-
 file C:\Users\Nikol\IdeaProjects\TMS_homework\src\Lesson_12\file1
-docnum123456789	
-contract1234567	
-con91820303030332*	#uncorrected symbols in doc name	 uncorrected classification of doc name	 uncorrected size of doc name	
-contract 123456	#uncorrected symbols in doc name	
-aoi178287128298	#uncorrected classification of doc name	
-docnumqwjkwkkwkw	#uncorrected size of doc name	
 con91820303030332*	#uncorrected symbols in doc name	 uncorrected classification of doc name	 uncorrected size of doc name	
 contract1234567	
 docnumqwjkwkkwkw	#uncorrected size of doc name	
@@ -16,16 +9,6 @@ docnum123456789
 
 
 file C:\Users\Nikol\IdeaProjects\TMS_homework\src\Lesson_12\file2
-docnum123456789	
-contract1234567545	#uncorrected size of doc name	
-54	#uncorrected classification of doc name	 uncorrected size of doc name	
-564	#uncorrected classification of doc name	 uncorrected size of doc name	
-con91820303030332*66874532	#uncorrected symbols in doc name	 uncorrected classification of doc name	 uncorrected size of doc name	
-contract 123456	#uncorrected symbols in doc name	
-	#uncorrected symbols in doc name	 uncorrected classification of doc name	 uncorrected size of doc name	
-    jhgfghhjjhk	#uncorrected symbols in doc name	 uncorrected classification of doc name	
-aoi178287128298	#uncorrected classification of doc name	
-docnumqwjkwkkwkw	#uncorrected size of doc name	
 	#uncorrected symbols in doc name	 uncorrected classification of doc name	 uncorrected size of doc name	
 564	#uncorrected classification of doc name	 uncorrected size of doc name	
     jhgfghhjjhk	#uncorrected symbols in doc name	 uncorrected classification of doc name	

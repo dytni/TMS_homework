@@ -81,12 +81,11 @@ public class Task1 {
                     }
                     hashMap.put(line, errorMessage +"\n");
                 }
-                docFileReport.write(line +"\t"+hashMap.get(line));
                 stringBuilder.delete(0, stringBuilder.indexOf("\n") + 1);
                 System.out.println(line);
                 counter -= 1;
             }
-            for(String fileNumber: hashMap.keySet()){
+            for(String fileNumber: hashSet){
                 docFileReport.write(fileNumber +"\t"+hashMap.get(fileNumber));
             }
             docFileReport.write("\n\n\n");
