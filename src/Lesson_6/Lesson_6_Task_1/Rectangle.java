@@ -6,14 +6,14 @@ public class Rectangle extends Figure{
     Rectangle(double aSide, double bSide){
         this.aSide = aSide;
         this.bSide = bSide;
-        this.setPerimeter();
-        this.setArea();
+        this.calculatePerimeter();
+        this.calculateArea();
     }
-    double setPerimeter(){
+    double calculatePerimeter(){
         perimeter=(aSide + bSide)*2;
         return perimeter;
     }
-    double setArea(){
+    double calculateArea(){
         area= aSide * bSide;
         return area;
     }
