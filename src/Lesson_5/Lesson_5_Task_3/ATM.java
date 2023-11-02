@@ -7,21 +7,21 @@ public class ATM {
     Money atmMoney = new Money();
 
     ATM(int count20, int count50, int count100) {
-        atmMoney.setCount(count20, Denomination.dollar20);
-        atmMoney.setCount(count50, Denomination.dollar50);
-        atmMoney.setCount(count100, Denomination.dollar100);
+        atmMoney.setCount(count20, Denomination.DOLLAR_20);
+        atmMoney.setCount(count50, Denomination.DOLLAR_50);
+        atmMoney.setCount(count100, Denomination.DOLLAR_100);
     }
     void addMoney(){
         System.out.println("Enter count of banknotes with denomination 20 ");
         Scanner scanner = new Scanner(System.in);
         int count = scanner.nextInt();
-        atmMoney.addCount(count, Denomination.dollar20);
+        atmMoney.addCount(count, Denomination.DOLLAR_20);
         System.out.println("Enter count of banknotes with denomination 50 ");
         count = scanner.nextInt();
-        atmMoney.addCount(count, Denomination.dollar50);
+        atmMoney.addCount(count, Denomination.DOLLAR_50);
         System.out.println("Enter count of banknotes with denomination 100 ");
         count = scanner.nextInt();
-        atmMoney.addCount(count, Denomination.dollar100);
+        atmMoney.addCount(count, Denomination.DOLLAR_100);
     }
 
     boolean takeMoney(int sum) {
@@ -33,17 +33,17 @@ public class ATM {
             sum = sum - 100;
             count100 += 1;
         }
-        money.setCount(count100, Denomination.dollar100);
+        money.setCount(count100, Denomination.DOLLAR_100);
         while (sum >= 90) {
             sum = sum - 50;
             count50 += 1;
         }
-        money.setCount(count50, Denomination.dollar50);
+        money.setCount(count50, Denomination.DOLLAR_50);
         while (sum != 0) {
             sum = sum - 20;
             count20 += 1;
         }
-        money.setCount(count20, Denomination.dollar20);
+        money.setCount(count20, Denomination.DOLLAR_20);
         System.out.println(" You will have \n"+ count20 +" banknotes with denomination 20\n"
                 + count50 +" banknotes with denomination 50\n"
                 + count100 +" banknotes with denomination 100\n");
