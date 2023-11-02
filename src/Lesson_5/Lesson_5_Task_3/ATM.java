@@ -1,6 +1,5 @@
 package Lesson_5.Lesson_5_Task_3;
 
-import java.util.Scanner;
 
 public class ATM {
 
@@ -11,17 +10,11 @@ public class ATM {
         atmMoney.setCount(count50, Denomination.DOLLAR_50);
         atmMoney.setCount(count100, Denomination.DOLLAR_100);
     }
-    void addMoney(){
+    void addMoney(int count20, int count50, int count100){
         System.out.println("Enter count of banknotes with denomination 20 ");
-        Scanner scanner = new Scanner(System.in);
-        int count = scanner.nextInt();
-        atmMoney.addCount(count, Denomination.DOLLAR_20);
-        System.out.println("Enter count of banknotes with denomination 50 ");
-        count = scanner.nextInt();
-        atmMoney.addCount(count, Denomination.DOLLAR_50);
-        System.out.println("Enter count of banknotes with denomination 100 ");
-        count = scanner.nextInt();
-        atmMoney.addCount(count, Denomination.DOLLAR_100);
+        atmMoney.addCount(count20, Denomination.DOLLAR_20);
+        atmMoney.addCount(count50, Denomination.DOLLAR_50);
+        atmMoney.addCount(count100, Denomination.DOLLAR_100);
     }
 
     boolean takeMoney(int sum) {
