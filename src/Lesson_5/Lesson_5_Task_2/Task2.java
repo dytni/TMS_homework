@@ -15,7 +15,7 @@ package Lesson_5.Lesson_5_Task_2;
 public class Task2 {
      public static void main(String[] args) {
 
-         HDD hddPc2 = new HDD("Samsung",2, TypeHDD.internal);
+         HDD hddPc2 = new HDD("Samsung",2, TypeHDD.INTERNAL);
          RAM ramPc2 = new RAM("lg",12);
          Computer pc1 = new Computer(500, "lenovo");
          Computer pc2 = new Computer(700,"HP", hddPc2, ramPc2);

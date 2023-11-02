@@ -11,7 +11,7 @@ public class HDD {
         HDD(){
             name = "Toshiba";
             storage = 1;
-            typeHdd = TypeHDD.internal;
+            typeHdd = TypeHDD.INTERNAL;
         }
         HDD(String nameHdd, int storageHdd, TypeHDD type){
             name= nameHdd;
