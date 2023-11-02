@@ -9,8 +9,6 @@ public class Triangle extends Figure {
         this.aSide = aSide;
         this.bSide = bSide;
         this.cSide = cSide;
-        this.calculatePerimeter();
-        this.calculateArea();
     }
 
     double calculatePerimeter() {

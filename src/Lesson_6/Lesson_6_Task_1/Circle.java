@@ -5,8 +5,6 @@ public class Circle extends Figure{
     final double PI= 3.14;
     Circle(double radius){
         this.radius=radius;
-        this.calculatePerimeter();
-        this.calculateArea();
     }
     double calculateArea(){
         area=PI*radius*radius;
