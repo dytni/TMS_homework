@@ -11,7 +11,6 @@ public class ATM {
         atmMoney.setCount(count100, Denomination.DOLLAR_100);
     }
     void addMoney(int count20, int count50, int count100){
-        System.out.println("Enter count of banknotes with denomination 20 ");
         atmMoney.addCount(count20, Denomination.DOLLAR_20);
         atmMoney.addCount(count50, Denomination.DOLLAR_50);
         atmMoney.addCount(count100, Denomination.DOLLAR_100);
