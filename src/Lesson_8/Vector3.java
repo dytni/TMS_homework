@@ -18,24 +18,32 @@ public class Vector3 {
         return Math.sqrt(x * x + y * y + z * z);
     }
 
-    int vectorScalar(Vector3 vector3) {
-        if (vector3 == null) throw new IllegalArgumentException("Error argument");
+    int vectorScalar(Vector3 vector3) throws IllegalArgumentException {
+        if (vector3 == null) {
+            throw new IllegalArgumentException("Error argument");
+        }
         return x * vector3.x + y * vector3.y + z * vector3.z;
     }
 
-    Vector3 vectorSum(Vector3 vector3) {
-        if (vector3 == null) throw new IllegalArgumentException("Error argument");
+    Vector3 vectorSum(Vector3 vector3) throws IllegalArgumentException {
+        if (vector3 == null) {
+            throw new IllegalArgumentException("Error argument");
+        }
         return new Vector3(x + vector3.x,
                 y + vector3.y, z + vector3.z);
     }
 
-    Vector3 vectorDiff(Vector3 vector3) {
-        if (vector3 == null) throw new IllegalArgumentException("Error operator");
+    Vector3 vectorDiff(Vector3 vector3) throws IllegalArgumentException {
+        if (vector3 == null) {
+            throw new IllegalArgumentException("Error operator");
+        }
         return new Vector3(x - vector3.x, y - vector3.y, z - vector3.z);
     }
 
-    static Vector3[] vector3s(int n) {
-        if (n < 0) throw new IllegalArgumentException("Error operator");
+    static Vector3[] vector3s(int n) throws IllegalArgumentException {
+        if (n < 0) {
+            throw new IllegalArgumentException("Error operator");
+        }
         Random random = new Random();
         Vector3[] vector3s = new Vector3[n];
         for (int i = 0; i < n; i++) {
@@ -44,8 +52,10 @@ public class Vector3 {
         return vector3s;
     }
 
-    Boolean vectorIsLonger(Vector3 vector3) {
-        if (vector3 == null) throw new IllegalArgumentException("Error operator");
+    Boolean vectorIsLonger(Vector3 vector3) throws IllegalArgumentException {
+        if (vector3 == null) {
+            throw new IllegalArgumentException("Error operator");
+        }
         return this.vectorLen() < vector3.vectorLen();
     }
 

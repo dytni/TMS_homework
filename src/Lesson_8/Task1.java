@@ -23,7 +23,7 @@ public class Task1 {
          Vector2 vector2 = new Vector2(1,1);
          System.out.println(vector2.vectorLen());
          int [] coordinates = new int[]{ 4, 5 ,2};
-         VectorArr vectorArr = new VectorArr(coordinates);
+         VectorArray vectorArr = new VectorArray(coordinates);
          System.out.println(vectorArr.vectorLen());
          vectorArr.vectorShowInfo();
      }
