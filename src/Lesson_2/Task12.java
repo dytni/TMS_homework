@@ -1,4 +1,4 @@
-package Leson_2;
+package Lesson_2;
 
 public class Task12 {/*1. Выведите на экран первые 11 членов последовательности
 Фибоначчи.*/

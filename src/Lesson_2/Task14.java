@@ -1,4 +1,4 @@
-package Leson_2;
+package Lesson_2;
 
 public class Task14 {/*Напишите программу, которая выводит на консоль таблицу
     умножения.*/
