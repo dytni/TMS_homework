@@ -9,7 +9,6 @@ public class Task8 {/*Напишите программу, где пользов
 
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
-
         int number;
         System.out.println("Enter number");
         int sum = 0;
