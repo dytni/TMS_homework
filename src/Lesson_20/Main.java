@@ -11,20 +11,11 @@ import java.sql.Statement;
 
 public class Main {
 
-    private static void initializeDriver() {
-        try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
-        } catch (ClassNotFoundException e) {
-            throw new RuntimeException(e);
-        }
-    }
-
     public static void main(String[] args) {
         String url = "jdbc:mysql://localhost:3306/students_schema";
         String username = "root";
         String password = "1331";
 
-        initializeDriver();
 
         try {
 
