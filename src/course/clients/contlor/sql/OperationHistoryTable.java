@@ -18,6 +18,8 @@ public class OperationHistoryTable {
                 Connection connection = DriverManager.getConnection(URL, USERNAME, PASSWORD);
                 PreparedStatement preparedStatement = connection.prepareStatement(INSERT)
         ) {
+
+            Class.forName("com.mysql.cj.jdbc.Driver");
             preparedStatement.setInt(1, bankOperation.getOperationId());
             preparedStatement.setString(2, bankOperation.getNumberAccountIn());
             preparedStatement.setString(3, bankOperation.getNumberAccountOut());
@@ -27,6 +29,8 @@ public class OperationHistoryTable {
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
         }
     }
 
@@ -38,6 +42,8 @@ public class OperationHistoryTable {
 
                 PreparedStatement preparedStatement = connection.prepareStatement(SELECT)
         ) {
+
+            Class.forName("com.mysql.cj.jdbc.Driver");
             preparedStatement.setInt(1, accountIn);
             preparedStatement.setInt(2, accountOut);
             preparedStatement.setFloat(3, payment);
@@ -49,6 +55,8 @@ public class OperationHistoryTable {
 
         } catch (SQLException e) {
             e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
         }
         return bankOperation;
     }

@@ -26,6 +26,8 @@ public class BankAccountsTable {
                 PreparedStatement preparedStatement = connection.prepareStatement(INSERT)
         ) {
 
+            Class.forName("com.mysql.cj.jdbc.Driver");
+
             preparedStatement.setInt(1, bankAccount.getBankAccountId());
             preparedStatement.setInt(2, bankAccount.getUserId());
             preparedStatement.setString(3, bankAccount.getAccountNumber());
@@ -37,12 +39,16 @@ public class BankAccountsTable {
 
         } catch (SQLException e) {
             e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
         }
     }
 
     public static void select() {
         try (Connection connection = DriverManager.getConnection(URL, USERNAME, PASSWORD);
              PreparedStatement preparedStatement = connection.prepareStatement(SELECTALL)) {
+
+            Class.forName("com.mysql.cj.jdbc.Driver");
             ResultSet resultSet = preparedStatement.executeQuery();
             int iterator = 1;
             while (resultSet.next()) {
@@ -55,6 +61,8 @@ public class BankAccountsTable {
             resultSet.close();
         } catch (SQLException e) {
             throw new RuntimeException(e);
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
         }
     }
 
@@ -65,12 +73,16 @@ public class BankAccountsTable {
                 Connection connection = DriverManager.getConnection(URL, USERNAME, PASSWORD);
                 PreparedStatement preparedStatement = connection.prepareStatement(SELECTBYID)
         ) {
+
+            Class.forName("com.mysql.cj.jdbc.Driver");
             preparedStatement.setInt(1, id);
             resultSet = preparedStatement.executeQuery();
             bankAccount = Serialization.serializeBankAccount(resultSet);
             resultSet.close();
         } catch (SQLException e) {
             e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
         }
         return bankAccount;
     }
@@ -82,12 +94,16 @@ public class BankAccountsTable {
                 Connection connection = DriverManager.getConnection(URL, USERNAME, PASSWORD);
                 PreparedStatement preparedStatement = connection.prepareStatement(SELECTBYNUMBER)
         ) {
+
+            Class.forName("com.mysql.cj.jdbc.Driver");
             preparedStatement.setString(1, number);
             resultSet = preparedStatement.executeQuery();
             bankAccount = Serialization.serializeBankAccount(resultSet);
             resultSet.close();
         } catch (SQLException e) {
             e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
         }
         return bankAccount;
     }
@@ -110,6 +126,8 @@ public class BankAccountsTable {
                 Connection connection = DriverManager.getConnection(URL, USERNAME, PASSWORD);
                 PreparedStatement preparedStatement = connection.prepareStatement(UPDATE)
         ) {
+
+            Class.forName("com.mysql.cj.jdbc.Driver");
             preparedStatement.setFloat(1, balanceOut);
             preparedStatement.setString(2, numberAccountOut);
             preparedStatement.executeUpdate();
@@ -122,6 +140,8 @@ public class BankAccountsTable {
         } catch (SQLException e) {
             e.printStackTrace();
             return OperationStatus.ERROR;
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
         }
         return OperationStatus.SUCCESS;
 
@@ -131,10 +151,14 @@ public class BankAccountsTable {
     public static void delete(int userid) {
         try (Connection connection = DriverManager.getConnection(URL, USERNAME, PASSWORD);
              PreparedStatement preparedStatement = connection.prepareStatement(DELETE)) {
+
+            Class.forName("com.mysql.cj.jdbc.Driver");
             preparedStatement.setInt(1, userid);
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
         }
     }
 }

@@ -9,12 +9,13 @@ import java.util.List;
 import java.util.Scanner;
 
 public class UsersTable {
-    private static String URL = "jdbc:mysql://localhost:3306/bank_schema";
-    private static String USERNAME = "root";
-    private static String PASSWORD = "1331";
+    private static final String URL = "jdbc:mysql://localhost:3306/bank_schema";
+    private static final String USERNAME = "root";
+    private static final String PASSWORD = "1331";
     private static String INSERT = "INSERT INTO bankusers(id, name, surname, passport_ID) VALUES(?,?,?,?);";
-    private static String SELECT = "SELECT * FROM bankusers;";
+    private static final String SELECT = "SELECT * FROM bankusers;";
     private static String DELETE = "DELETE FROM bankusers WHERE id = ?;";
+
 
 
     public static void inset(User user) {
@@ -22,6 +23,8 @@ public class UsersTable {
                 Connection connection = DriverManager.getConnection(URL, USERNAME, PASSWORD);
                 PreparedStatement preparedStatement = connection.prepareStatement(INSERT)
         ) {
+
+            Class.forName("com.mysql.cj.jdbc.Driver");
             preparedStatement.setInt(1, user.getId());
             preparedStatement.setString(2, user.getName());
             preparedStatement.setString(3, user.getSurname());
@@ -29,12 +32,16 @@ public class UsersTable {
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
         }
     }
 
     public static void select() {
         try (Connection connection = DriverManager.getConnection(URL, USERNAME, PASSWORD);
              PreparedStatement preparedStatement = connection.prepareStatement(SELECT)) {
+
+            Class.forName("com.mysql.cj.jdbc.Driver");
             ResultSet resultSet = preparedStatement.executeQuery();
             int iterator = 1;
             while (resultSet.next()) {
@@ -47,12 +54,16 @@ public class UsersTable {
             resultSet.close();
         } catch (SQLException e) {
             throw new RuntimeException(e);
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
         }
     }
 
     public static void delete() {
-        try (Connection connection = DriverManager.getConnection(URL, USERNAME, PASSWORD);
+        try (
+                Connection connection = DriverManager.getConnection(URL, USERNAME, PASSWORD);
              PreparedStatement preparedStatement = connection.prepareStatement(SELECT)) {
+            Class.forName("com.mysql.cj.jdbc.Driver");
             ResultSet resultSet = preparedStatement.executeQuery();
             List<User> users = new ArrayList<>();
             while (resultSet.next()) {
@@ -76,6 +87,8 @@ public class UsersTable {
             BankAccountsTable.delete(id);
         } catch (SQLException e) {
             e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
         }
     }
 
