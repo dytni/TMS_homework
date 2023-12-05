@@ -5,7 +5,6 @@ import course.clients.contlor.AddUser;
 import course.clients.contlor.sql.BankAccountsTable;
 import course.clients.contlor.sql.UsersTable;
 import course.clients.enums.OperationStatus;
-import org.w3c.dom.NodeList;
 
 import java.util.List;
 import java.util.Map;
@@ -32,31 +31,19 @@ public class CourseProject {
                     System.out.println("Enter path to the folder: ");
                     String path = scanner.next();
                     /*Какой то парсинг*/
-                    Map<String, List<Object>> result = Parsing.pars(path);
-                    NodeList accountOut;
-                    NodeList accountIn;
-                    NodeList payment;
+                    Map<String, List<List<Object>>> result = Parsing.pars(path);
                     for (int j = 0; j < result.get("accountFrom").size(); j++) {
-                        Object accountFromObj = result.get("accountFrom").get(j);
-                        Object accountToObj = result.get("accountTo").get(j);
-                        Object paymentObj = result.get("payment").get(j);
-
-                        if (accountFromObj instanceof NodeList && accountToObj instanceof NodeList && paymentObj instanceof NodeList) {
-                            accountIn = (NodeList) accountFromObj;
-                            accountOut = (NodeList) accountToObj;
-                            payment = (NodeList) paymentObj;
-
-                            for (int i = 0; i < accountIn.getLength(); i++) {
-                                OperationStatus status = BankAccountsTable.update(Float.parseFloat(payment.item(i).getNodeValue())
-                                        , accountIn.item(i).getTextContent(), accountOut.item(i).getTextContent());
-                                AddBankOperation.add(BankAccountsTable.select(accountIn.item(i).getTextContent()),
-                                        BankAccountsTable.select(accountOut.item(i).getTextContent()),
-                                        Float.parseFloat(payment.item(i).getNodeValue()), status);
+                        List<Object> accountIn = result.get("accountTo").get(j);
+                        List<Object> accountOut = result.get("accountFrom").get(j);
+                        List<Object> payment = result.get("payment").get(j);
+                            for (int i = 0; i < accountIn.size(); i++) {
+                                OperationStatus status = BankAccountsTable.update((Float) payment.get(i)
+                                        , (String) accountIn.get(i), (String) accountOut.get(i));
+                                AddBankOperation.add(BankAccountsTable.select( (String) accountIn.get(i)),
+                                        BankAccountsTable.select( (String) accountOut.get(i)),(Float)
+                                        payment.get(i), status);
                             }
-                        } else {
-                            // Обработка JSON-объектов
                         }
-                    }
                 }
                 case 2 -> {
                     System.out.println("Add user");

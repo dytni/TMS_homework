@@ -1,7 +1,6 @@
 package course;
 
 import org.w3c.dom.Document;
-import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
@@ -13,17 +12,16 @@ import java.io.IOException;
 import java.util.*;
 
 public class Parsing {
-    private static List<Object> FromNodeToPrim(NodeList nodeList){
+    private static List<Object> FromNodeToList(NodeList nodeList){
         List<Object> list = new ArrayList<>();
-        for (int i = 0 ; i< nodeList.getLength(); i++){
-            Node temp = nodeList.item(i);
-            list.add(temp.getNodeValue());
+        for (int i = 0; i<nodeList.getLength();i++) {
+            list.add(nodeList.item(i).getNodeValue());
         }
         return list;
     }
-    public static Map<String, List<Object>> pars(String path) {
+    public static Map<String, List<List<Object>>> pars(String path) {
         File folder = new File(path);
-        Map<String, List<Object>> result = new HashMap<>();
+        Map<String, List<List<Object>>> result = new HashMap<>();
         if (!folder.exists() || !folder.isDirectory()) {
             System.out.println("Incorrect path");
             System.exit(0);
@@ -50,12 +48,18 @@ public class Parsing {
             try {
                 DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
                 DocumentBuilder builder = factory.newDocumentBuilder();
+                List<List<Object>> accountFrom = new ArrayList<>();
+                List<List<Object>> accountTo = new ArrayList<>();
+                List<List<Object>> payment = new ArrayList<>();
                 for (File file : xmlFiles) {
                     Document document = builder.parse(file);
                     document.getDocumentElement().normalize();
-                    result.put ("accountFrom",FromNodeToPrim(document.getElementsByTagName("accountFrom")));
-                    result.put("accountTo", FromNodeToPrim(document.getElementsByTagName("accountTo")));
-                    result.put("payment", FromNodeToPrim(document.getElementsByTagName("payment")));
+                    accountTo.add(FromNodeToList(document.getElementsByTagName("accountTo")));
+                    accountFrom.add(FromNodeToList(document.getElementsByTagName("accountFrom")));
+                    payment.add(FromNodeToList(document.getElementsByTagName("payment")));
+                    result.put("accountFrom",accountFrom);
+                    result.put("accountTo", accountTo);
+                    result.put("payment",payment);
                 }/*
                 for (File file : jsonFiles) {
                     String content = new String(Files.readAllBytes(file.toPath()));
