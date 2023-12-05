@@ -1,6 +1,7 @@
 package course;
 
 import org.w3c.dom.Document;
+import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
@@ -9,21 +10,25 @@ import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 import java.io.File;
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 public class Parsing {
-
-    public static Map<String, NodeList> pars(String path) {
+    private static List<Object> FromNodeToPrim(NodeList nodeList){
+        List<Object> list = new ArrayList<>();
+        for (int i = 0 ; i< nodeList.getLength(); i++){
+            Node temp = nodeList.item(i);
+            list.add(temp.getNodeValue());
+        }
+        return list;
+    }
+    public static Map<String, List<Object>> pars(String path) {
         File folder = new File(path);
-        Map<String, NodeList> result = new HashMap<>();
+        Map<String, List<Object>> result = new HashMap<>();
         if (!folder.exists() || !folder.isDirectory()) {
             System.out.println("Incorrect path");
             System.exit(0);
         }
-        // Проверка на наличие xml файлов в папке
+        // Проверка на наличие xml и json файлов в папке
         File[] files = folder.listFiles();
         Set<File> xmlFiles = new HashSet<>();
         Set<File> jsonFiles = new HashSet<>();
@@ -45,27 +50,19 @@ public class Parsing {
             try {
                 DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
                 DocumentBuilder builder = factory.newDocumentBuilder();
-                if(!xmlFiles.isEmpty()){
                 for (File file : xmlFiles) {
                     Document document = builder.parse(file);
                     document.getDocumentElement().normalize();
-                    NodeList accountOut = document.getElementsByTagName("accountFrom");
-                    NodeList accountIn = document.getElementsByTagName("accountTo");
-                    NodeList payment = document.getElementsByTagName("payment");
-                    result.put("accountFrom", accountOut);
-                    result.put("accountTo", accountIn);
-                    result.put("payment", payment);
-                }
-                }
-                /*
-                if(!jsonFiles.isEmpty()){
-                for (File json : jsonFiles) {
-                    ObjectMapper mapper = new ObjectMapper();
-                    Map<String, Object> jsonMap = mapper.readValue(json, Map.class);
-                    result.put("accountFrom", (NodeList) jsonMap.get("accountFrom"));
-                    result.put("accountTo", (NodeList) jsonMap.get("accountTo"));
-                    result.put("payment", (NodeList) jsonMap.get("payment"));
-                    }
+                    result.put ("accountFrom",FromNodeToPrim(document.getElementsByTagName("accountFrom")));
+                    result.put("accountTo", FromNodeToPrim(document.getElementsByTagName("accountTo")));
+                    result.put("payment", FromNodeToPrim(document.getElementsByTagName("payment")));
+                }/*
+                for (File file : jsonFiles) {
+                    String content = new String(Files.readAllBytes(file.toPath()));
+                    JSONObject jsonObject = new JSONObject(content);
+                    result.computeIfAbsent("accountFrom", k -> new ArrayList<>()).add(jsonObject.get("accountFrom"));
+                    result.computeIfAbsent("accountTo", k -> new ArrayList<>()).add(jsonObject.get("accountTo"));
+                    result.computeIfAbsent("payment", k -> new ArrayList<>()).add(jsonObject.get("payment"));
                 }*/
             } catch (ParserConfigurationException | SAXException | IOException e) {
                 e.printStackTrace();
@@ -74,5 +71,3 @@ public class Parsing {
         return result;
     }
 }
-
-

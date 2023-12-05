@@ -7,6 +7,7 @@ import course.clients.contlor.sql.UsersTable;
 import course.clients.enums.OperationStatus;
 import org.w3c.dom.NodeList;
 
+import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
 
@@ -31,18 +32,30 @@ public class CourseProject {
                     System.out.println("Enter path to the folder: ");
                     String path = scanner.next();
                     /*Какой то парсинг*/
-                    Map<String, NodeList> result = Parsing.pars(path);
-                    /*конец какого то парсинга*/
-                    NodeList accountOut = result.get("accountFrom");
-                    NodeList accountIn = result.get("accountTo");
-                    NodeList payment = result.get("payment");
-                    int length = accountIn.getLength();
-                    for (int i = 0; i < length; i++) {
-                        OperationStatus status = BankAccountsTable.update(payment.item(i).getNodeType()
-                                , accountIn.item(i).toString(), accountOut.item(i).toString());
-                        AddBankOperation.add(BankAccountsTable.select(accountIn.item(i).getNodeType()),
-                                BankAccountsTable.select(accountOut.item(i).getNodeType()),
-                                payment.item(i).getNodeType(), status);
+                    Map<String, List<Object>> result = Parsing.pars(path);
+                    NodeList accountOut;
+                    NodeList accountIn;
+                    NodeList payment;
+                    for (int j = 0; j < result.get("accountFrom").size(); j++) {
+                        Object accountFromObj = result.get("accountFrom").get(j);
+                        Object accountToObj = result.get("accountTo").get(j);
+                        Object paymentObj = result.get("payment").get(j);
+
+                        if (accountFromObj instanceof NodeList && accountToObj instanceof NodeList && paymentObj instanceof NodeList) {
+                            accountIn = (NodeList) accountFromObj;
+                            accountOut = (NodeList) accountToObj;
+                            payment = (NodeList) paymentObj;
+
+                            for (int i = 0; i < accountIn.getLength(); i++) {
+                                OperationStatus status = BankAccountsTable.update(Float.parseFloat(payment.item(i).getNodeValue())
+                                        , accountIn.item(i).getTextContent(), accountOut.item(i).getTextContent());
+                                AddBankOperation.add(BankAccountsTable.select(accountIn.item(i).getTextContent()),
+                                        BankAccountsTable.select(accountOut.item(i).getTextContent()),
+                                        Float.parseFloat(payment.item(i).getNodeValue()), status);
+                            }
+                        } else {
+                            // Обработка JSON-объектов
+                        }
                     }
                 }
                 case 2 -> {

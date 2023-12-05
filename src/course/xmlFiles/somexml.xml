@@ -3,6 +3,5 @@
         <accountFrom>12345-67890</accountFrom>
         <accountTo>09876-54321</accountTo>
         <payment>1000</payment>
-        <status>SUCCESS</status>
     </transaction>
 </transactions>
